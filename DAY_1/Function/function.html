@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let varNama = "Ikbal"
+        function printText(nama){
+            console.log("Hello World! Nama Saya "+nama)
+        }
+        printText(varNama)
+
+        let printText2 = (nama) => {
+            console.log("Hello World! Nama Saya "+nama)
+        }
+        printText2(varNama)
+
+        let printHello = function printText2(nama) {
+            console.log("Hello World! Nama Saya "+nama)
+        }
+        printHello(varNama)
+
+        //===============================================================
+
+        let harga = 5000
+        let margin 
+        let hargaJual1 = harga + (margin || 5000)
+        let hargaJual2 = harga + (margin ?? 5000)
+        console.log(hargaJual1)
+        console.log(hargaJual2)
+
+        let angka = [1, 2, 3, 4, 5]
+        let angkaBaru = angka.map((angka) => angka * 2)
+        console.log(angkaBaru)
+
+        let angkaGanjil = angka.filter((angka) => angka % 2 == 1)
+        console.log(angkaGanjil)
+
+        let number1 = 1
+        let text1 = '1'
+        console.log(number1 == text1)
+        console.log(number1 === text1)
+
+        let sumAngka = angka.reduce((accmulator, currentValue) => accmulator + currentValue + currentValue)
+        console.log(sumAngka)
+
+        let buah = ['apel', 'pisang', 'semangka']
+        buah.forEach((buah) => console.log(buah))
+
+        let huruf = ['A', 'B', 'C', 'D', 'E', 'F']
+        huruf.sort()
+        console.log(huruf)
+
+        let hasil = huruf.find((hasil) => hasil === 'C')
+        console.log(hasil)
+
+        //===============================================================
+
+        //menambah jeruk ke akhir array
+        buah.push("jeruk")
+        console.log(buah)
+        
+        // Menghapus element terakhir pada array
+        buah.pop()
+        console.log(buah)
+
+        // Menghapus element pertama oada array
+        buah.shift()
+        console.log(buah)
+
+        // menambah element di tengah array
+        buah.splice(1,0, "melon")
+        console.log(buah)
+
+        // Menghitung jumlah panjang array
+        console.log(buah.length)
+
+        // Mengembalikan nilai index element
+        console.log(buah.indexOf('pisang'))
+        console.log(buah.indexOf('semangka'))
+
+        // Menggabungkan 2 array
+        const buah2 = ['lengkeng', 'mangga']
+        const _mergeFruits = buah.concat(buah2)
+        console.log(_mergeFruits)
+
+        // =============================================================================
+
+        // Deklarasi object
+        let _person = {
+            name: "John Doe",
+            age: 38,
+            isMaried: false
+        }
+
+        // Akses Properti
+        console.log(_person.name)
+        console.log(_person['age'])
+
+        // Menghapus properti Object
+        console.log('Sebelum Menghapus: ')
+        console.log(_person)
+        delete _person.isMaried
+        console.log('Setelah Mengapus: ')
+        console.log(_person)
+
+        // Property Shorthand
+        const _jenis = 'persegi'
+        const _panjang = 30
+        const _lebar = 30
+
+        const _bangunDatar = {_jenis, _panjang, _lebar}
+        console.log(_bangunDatar)
+
+        // Property Existence, memeriksa properti dalam object
+        let _student = {
+            name: "John Cena",
+            age: 30,
+            className: "PPLG"
+        }
+
+        console.log("name" in _student)
+        console.log("genre" in _student)
+        console.log(_student.hasOwnProperty("name"))
+        console.log(_student.hasOwnProperty("genre"))
+
+        // =================================================================
+
+        const books = [
+            {
+                title: "Harry Potter and the Sorcerer's Stone",
+                author: "J. K. Rowling",
+                genre: "Fantasy",
+                year: 1997
+            },
+            {
+                title: "To Kill a Mockingbird",
+                author: "Harper Lee",
+                genre: "Fiction",
+                year: 1960
+            },
+            {
+                title: "The Great Gatsby",
+                author: "F. Scott Fitzgerald",
+                genre: "Fiction",
+                year: 1925
+            },
+        ]
+
+        const fictionGenre = books.filter(book => book.genre === "Fiction");
+
+    fictionGenre.forEach(book => {
+        console.log(`Title: ${book.title}`);
+        console.log(`Author: ${book.author}`);
+        console.log(`Genre: ${book.genre}`);
+        console.log(`Year: ${book.year}`);
+        console.log('----------------------');
+    });
+
+    // fictionGenre,forEach((fictionGenre) => console.log(fictionGenre.title ));
+
+    //================================================================
+
+    const products = [
+        {
+            name: "Laptop",
+            price: 10000
+        },
+        {
+            name: "Smartphone",
+            price: 500
+        },
+        {
+            name: "Tablet",
+            price: 300
+        },
+    ]
+
+    products.forEach((products) => console.log(`${products.name} seharga ${products.price}`))
+    let Diskon = products.filter((products) => products.price *= 0.9)
+    console.log('=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=')
+    Diskon.forEach((Diskon) => console.log(Diskon.name + " seharga " + Diskon.price))
+
+    const newProducts = [
+        
+    ]
+    </script>
+</body>
+</html>
